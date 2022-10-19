@@ -2,6 +2,7 @@ package com.student.management.controller;
 
 
 import com.student.management.model.Group;
+import com.student.management.payload.request.GroupRequest;
 import com.student.management.service.GroupService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -23,8 +24,8 @@ public class GroupController {
                     description = "Add mark")
     })
     @PostMapping
-    public ResponseEntity<Object> addGroup(@RequestBody Group group) {
-        Object o = groupService.addGroup(group);
+    public ResponseEntity<Object> addGroup(@RequestBody GroupRequest groupRequest) {
+        Object o = groupService.addGroup(groupRequest);
         return new ResponseEntity<>(o, HttpStatus.CREATED);
     }
 

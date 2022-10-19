@@ -1,6 +1,7 @@
 package com.student.management.controller;
 
 import com.student.management.model.Subject;
+import com.student.management.payload.request.SubjectRequest;
 import com.student.management.service.SubjectService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -22,8 +23,8 @@ public class SubjectController {
                     description = "Add subject")
     })
     @PostMapping
-    public ResponseEntity<Object> addSubject(@RequestBody Subject subject) {
-        Object o = subjectService.addSubject(subject);
+    public ResponseEntity<Object> addSubject(@RequestBody SubjectRequest subjectRequest) {
+        Object o = subjectService.addSubject(subjectRequest);
         return new ResponseEntity<>(o, HttpStatus.CREATED);
     }
 

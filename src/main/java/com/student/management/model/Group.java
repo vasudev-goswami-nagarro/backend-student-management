@@ -1,7 +1,6 @@
 package com.student.management.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -9,12 +8,13 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "groups")
+@Builder
+@AllArgsConstructor
+@RequiredArgsConstructor
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer groupId;
 
     String name;
-
-
 }
